@@ -1,6 +1,6 @@
 
 *.h5
 *.png
-*.csv
+
 *-checkpoint.ipynb
 *-checkpoint.py
