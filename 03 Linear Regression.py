@@ -19,12 +19,10 @@ print(X.shape)
 print(X_b.shape)
 
 
-# # Selecting a Cost Function
+# Cost Function
 # 
 # Before we start training our model, we need to define an error function to minimize. 
 # One of the most common cost functions used in regression is the Mean Squared Error, or MSE.
-# 
-
 
 def MSE_error(theta):
     err = 0
