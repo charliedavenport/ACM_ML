@@ -18,7 +18,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 # In[2]:
 
 
-breast_cancer = pd.read_csv('Datasets/breast cancer/breast_cancer.csv', index_col='ID')
+breast_cancer = pd.read_csv('breast_cancer.csv', index_col='id')
 display(breast_cancer.head())
 
 bc_data = breast_cancer.drop(columns=['diagnosis']).values
@@ -76,7 +76,7 @@ logits = tf.sigmoid(tf.matmul(X, w))
 y_pred = tf.cast(tf.greater(logits, 0.5), dtype=tf.float32)
 # Cross Entropy Loss
 # add 1e-10 to logits to prevent taking a log(0.0) == NaN
-x_ent = -1.0/n_samples * (tf.matmul(tf.transpose(y), tf.log(logits + 1e-10))                        + tf.matmul(tf.transpose(1.0-y), tf.log(1.0-logits + 1e-10)))
+x_ent = -1.0/n_samples * (tf.matmul(tf.transpose(y), tf.log(logits + 1e-10)) + tf.matmul(tf.transpose(1.0-y), tf.log(1.0-logits + 1e-10)))
 acc = tf.reduce_sum(tf.cast(tf.equal(y_pred, y), dtype=tf.float32)) / float(n_samples)
 
 
