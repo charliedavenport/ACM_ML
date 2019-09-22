@@ -5,14 +5,11 @@ import matplotlib.pyplot as plt
 X = 2 * np.random.rand(100, 1) # pass in desired shape. In this case, (100,1)
 y = 4 + 3 * X + np.random.randn(100, 1) 
 # NOTE: I'm using two different random functions. rand() gives a uniform distribution, randn() gives a Gaussian distribution
-
-
 plt.scatter(X, y, s=20)
 plt.axis(ymin=0.0)
 plt.show()
 
-
-# # Linear Regression
+# Linear Regression
 
 X_b = np.c_[np.ones((100,1)), X] # add the bias term to every instance
 print(X.shape)
