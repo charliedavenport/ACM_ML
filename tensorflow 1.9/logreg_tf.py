@@ -21,7 +21,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 breast_cancer = pd.read_csv('breast_cancer.csv', index_col='id')
 display(breast_cancer.head())
 
-bc_data = breast_cancer.drop(columns=['diagnosis']).values
+bc_data = breast_cancer.drop(columns=['diagnosis']).dropna(axis='columns').values
 bc_data_scaled = StandardScaler().fit_transform(bc_data)
 bc_target = (breast_cancer['diagnosis'].values == 'M').astype(np.uint8)
 print(bc_data.shape)
